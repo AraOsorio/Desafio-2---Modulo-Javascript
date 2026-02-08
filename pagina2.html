@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stickers</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      .contenedor {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 30px;
+      }
+
+      .sticker {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sticker img {
+        width: 150px;
+      }
+
+      .sticker input {
+        width: 50px;
+        margin-top: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Puedes llevar hasta 10 stickers en total</h2>
+
+    <div class="contenedor">
+      <div class="sticker">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/512px-Octicons-mark-github.svg.png"
+        />
+        <br />
+        <input type="number" id="sticker1" value="0" />
+      </div>
+
+      <div class="sticker">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Slack_icon_2019.svg/512px-Slack_icon_2019.svg.png"
+        />
+        <br />
+        <input type="number" id="sticker2" value="0" />
+      </div>
+
+      <div class="sticker">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/200px-Git_icon.svg.png"
+        />
+        <br />
+        <input type="number" id="sticker3" value="0" />
+      </div>
+    </div>
+    <br />
+
+    <button id="verificar">Verificar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+      let boton = document.querySelector("#verificar");
+
+      boton.onclick = () => {
+        let sticker1 = Number(document.querySelector("#sticker1").value);
+        let sticker2 = Number(document.querySelector("#sticker2").value);
+        let sticker3 = Number(document.querySelector("#sticker3").value);
+
+        let total = sticker1 + sticker2 + sticker3;
+
+        if (total <= 10) {
+          document.querySelector("#resultado").innerHTML =
+            "Llevas " + total + " stickers";
+        } else {
+          document.querySelector("#resultado").innerHTML =
+            "Llevas demasiados stickers";
+        }
+      };
+    </script>
+  </body>
+</html>

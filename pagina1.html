@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen</title>
+</head>
+
+<body>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/500px-Cat_November_2010-1a.jpg" alt="">
+
+    <script>
+      let img = document.querySelector("img");
+      let borderojo = false;
+
+      img.onclick = () => {
+        if (borderojo == false) {
+          img.style.border = "2px solid red";
+          borderojo = true;
+        } else {
+          img.style.border = "";
+          borderojo = false;
+        }
+      }
+    </script>
+
+</body>
+</html>
